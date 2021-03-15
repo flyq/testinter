@@ -1,5 +1,8 @@
+import Hello "canister:hello";
+
 actor {
     public func greet(name : Text) : async Text {
-        return "Hello, " # name # "!";
+    	   var name1 : Text = "" # name # ", from testinter canister";
+	   await Hello.greet(name1)
     };
 };
